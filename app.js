@@ -22,7 +22,9 @@ addBtn.addEventListener('click', () => {
         newItem.classList.add('item');
         newItem.innerHTML = ` 
         <p> ${input.value} </p>
-        <div class="item-btn"></div>
+        <div class="item-btn">  
+            <i class="fa-sharp fa-solid fa-xmark"></i>
+        </div>
         `
         
         tasks.appendChild(newItem);
@@ -32,3 +34,12 @@ addBtn.addEventListener('click', () => {
     }
 
 })
+
+
+//smazání úkolu ze seznamu
+
+    tasks.addEventListener('click', (e) => {
+        if (e.target.classList.contains('fa-xmark')) {
+            e.target.parentElement.parentElement.remove();
+        }
+    })
