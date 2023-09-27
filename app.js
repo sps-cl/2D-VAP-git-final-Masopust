@@ -22,7 +22,8 @@ addBtn.addEventListener('click', () => {
         newItem.classList.add('item');
         newItem.innerHTML = ` 
         <p> ${input.value} </p>
-        <div class="item-btn">  
+        <div class="item-btn">   
+            <i class="fa-regular fa-pen-to-square"></i>
             <i class="fa-sharp fa-solid fa-xmark"></i>
         </div>
         `
@@ -43,3 +44,12 @@ addBtn.addEventListener('click', () => {
             e.target.parentElement.parentElement.remove();
         }
     })
+
+//označit úkol jako splněný
+
+tasks.addEventListener('click', (e) => {
+    if (e.target.classList.contains('fa-pen-to-square')
+    ) {
+        e.target.parentElement.parentElement.classList.toggle('completed');
+    }
+})
